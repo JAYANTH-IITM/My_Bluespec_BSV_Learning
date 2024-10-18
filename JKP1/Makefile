@@ -15,7 +15,7 @@
 # Please modify the following for your installation and setup
 
 # Directory for the specific example you are building
-EG ?= Eg02a_HelloWorld
+EG ?= JKP1
 
 # Directory containing the Bluespec Training distribution directory
 DISTRO ?= ..
@@ -33,12 +33,12 @@ VSIM ?= cvc
 # ================================================================
 # You should not have to change anything below this line
 
-TOPFILE   ?= $(DISTRO)/Example_Programs/$(EG)/src_BSV/Testbench.bsv
+TOPFILE   ?= $(DISTRO)/$(EG)/Testbench.bsv
 TOPMODULE ?= mkTestbench
 
 BSC_COMP_FLAGS = -elab -keep-fires -aggressive-conditions -no-warn-action-shadowing
 BSC_LINK_FLAGS = -keep-fires
-BSC_PATHS = -p $(DISTRO)/Example_Programs/$(EG)/src_BSV:$(DISTRO)/Example_Programs/Common:%/Prelude:%/Libraries
+BSC_PATHS = -p $(DISTRO)/$(EG):$(DISTRO)/Common:%/Prelude:%/Libraries
 
 .PHONY: help
 help:
