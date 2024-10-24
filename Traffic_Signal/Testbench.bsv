@@ -19,6 +19,7 @@ module mkTestbench(Empty);
         $display(" The curent State is : = %s", stateToString(cs));
         $display(" The next State is : = %s", stateToString(ns));
         cs <= ns; // update the current state 
+        
     endrule
 
 endmodule
